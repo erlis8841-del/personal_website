@@ -3,303 +3,100 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kosovo National Football Team — Home</title>
-  <meta name="description" content="Official website of the Kosovo National Football Team. Follow the Dardanët!">
+  <title>Kosovo National Football Team — Dardanët</title>
+  <meta name="description" content="Official website of the Kosovo National Football Team. The pride of a nation.">
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    /* ---------- Hero ---------- */
-    .hero {
-      background: linear-gradient(160deg, #003DA5 0%, #00205B 50%, #001540 100%);
-      color: var(--white);
-      text-align: center;
-      padding: 100px 20px 80px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      pointer-events: none;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      right: 0;
-      height: 6px;
-      background: var(--yellow);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: var(--yellow);
-      color: var(--blue-dark);
-      padding: 6px 18px;
-      border-radius: 20px;
-      font-weight: 700;
-      font-size: 0.9rem;
-      margin-bottom: 20px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .hero h1 {
-      font-size: 3.4rem;
-      font-weight: 900;
-      letter-spacing: 2px;
-      margin-bottom: 12px;
-      line-height: 1.1;
-    }
-
-    .hero h1 span {
-      color: var(--yellow);
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-      max-width: 560px;
-      margin: 0 auto 32px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    /* ---------- Stats Bar ---------- */
-    .stats-bar {
-      background: var(--blue-dark);
-      color: var(--white);
-      padding: 32px 20px;
-    }
-
-    .stats-grid {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      text-align: center;
-    }
-
-    .stat-item .stat-number {
-      font-size: 2rem;
-      font-weight: 900;
-      color: var(--yellow);
-    }
-
-    .stat-item .stat-label {
-      font-size: 0.85rem;
-      opacity: 0.8;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    /* ---------- Latest Match ---------- */
-    .match-highlight {
-      background: var(--white);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      max-width: 700px;
-      margin: -28px auto 0;
-      position: relative;
-      z-index: 2;
-      padding: 24px 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .match-team {
-      text-align: center;
-      flex: 1;
-      min-width: 120px;
-    }
-
-    .match-team .flag {
-      font-size: 2.8rem;
-      margin-bottom: 6px;
-    }
-
-    .match-team .name {
-      font-weight: 700;
-      font-size: 0.95rem;
-    }
-
-    .match-score {
-      text-align: center;
-      flex: 0 0 auto;
-    }
-
-    .match-score .score-num {
-      font-size: 2.8rem;
-      font-weight: 900;
-      color: var(--blue);
-      letter-spacing: 4px;
-    }
-
-    .match-score .score-label {
-      font-size: 0.82rem;
-      color: var(--gray);
-      margin-top: 2px;
-    }
-
-    /* ---------- News ---------- */
-    .news-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
-    }
-
-    .news-card .card-img {
-      background-size: cover;
-      background-position: center;
-      position: relative;
-    }
-
-    .news-tag {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: var(--yellow);
-      color: var(--blue-dark);
-      padding: 4px 12px;
-      border-radius: 4px;
-      font-weight: 700;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-    }
-
-    .news-card .card-body .date {
-      font-size: 0.8rem;
-      color: var(--gray);
-      margin-bottom: 6px;
-    }
-
-    /* ---------- CTA ---------- */
-    .cta-section {
-      background: var(--yellow);
-      text-align: center;
-      padding: 64px 20px;
-    }
-
-    .cta-section h2 {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--blue-dark);
-      margin-bottom: 12px;
-    }
-
-    .cta-section p {
-      color: var(--blue-dark);
-      opacity: 0.85;
-      max-width: 500px;
-      margin: 0 auto 24px;
-    }
-
-    .btn-dark {
-      background: var(--blue-dark);
-      color: var(--white);
-    }
-
-    .btn-dark:hover {
-      background: var(--blue);
-    }
-
-    /* ---------- Responsive ---------- */
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2.2rem; }
-      .stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .match-highlight { flex-direction: column; text-align: center; }
-    }
-  </style>
 </head>
 <body>
 
-  <!-- Loader -->
-  <div class="page-loader"><div class="spinner"></div></div>
-
-  <!-- Navbar -->
+  <!-- =============================================================
+       NAVBAR
+       ============================================================= -->
   <nav class="navbar">
     <div class="nav-inner">
       <a href="index.html" class="logo">
-        <div class="logo-icon">⚽</div>
-        <span>Kosovo<span style="color:var(--yellow);">NT</span></span>
+        <div class="logo-icon">
+          <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="22" cy="22" r="20" fill="#0A1628" stroke="#F0B828" stroke-width="2"/>
+            <path d="M22 6 L28 18 L22 16 L16 18 Z" fill="#F0B828" opacity="0.9"/>
+            <circle cx="22" cy="26" r="8" fill="none" stroke="#F0B828" stroke-width="2.5"/>
+            <circle cx="22" cy="26" r="3" fill="#F0B828"/>
+            <line x1="14" y1="32" x2="30" y2="32" stroke="#F0B828" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span>KOSOVO<span style="color:var(--gold);">NT</span></span>
       </a>
-      <button class="hamburger" aria-label="Menu">☰</button>
+      <button class="hamburger" aria-label="Toggle menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="4" y1="6" x2="20" y2="6"/>
+          <line x1="4" y1="12" x2="20" y2="12"/>
+          <line x1="4" y1="18" x2="20" y2="18"/>
+        </svg>
+      </button>
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="team.html">Team</a></li>
+        <li><a href="team.html">Squad</a></li>
         <li><a href="fixtures.html">Fixtures</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Hero -->
+  <!-- =============================================================
+       HERO
+       ============================================================= -->
   <section class="hero">
+    <div class="hero-pattern"></div>
+    <div class="hero-stripes"></div>
     <div class="hero-content">
-      <div class="hero-badge">⚽ Dardanët</div>
-      <h1>Kosovo <span>National</span> Football Team</h1>
-      <p>The pride of a nation. Follow the Dardanët on their journey through international football.</p>
+      <div class="hero-flag">⚽ Federata e Futbollit e Kosovës</div>
+      <h1>Kosovo <span class="gold">National</span><br>Football Team</h1>
+      <p>The Dardanët rise. A nation united behind 90 minutes. Experience the passion of Kosovo's journey through international football.</p>
       <div class="hero-buttons">
-        <a href="team.html" class="btn btn-primary">Meet the Team</a>
-        <a href="fixtures.html" class="btn btn-outline">View Fixtures</a>
+        <a href="team.html" class="btn btn-gold">Explore the Squad</a>
+        <a href="fixtures.html" class="btn btn-outline">View Fixtures →</a>
       </div>
     </div>
   </section>
 
-  <!-- Stats Bar -->
-  <div class="stats-bar">
-    <div class="stats-grid">
-      <div class="stat-item">
+  <!-- =============================================================
+       STATS RAIL
+       ============================================================= -->
+  <div class="stats-rail">
+    <div class="stats-rail-inner">
+      <div class="stat-cell">
         <div class="stat-number">2016</div>
         <div class="stat-label">FIFA Member Since</div>
       </div>
-      <div class="stat-item">
-        <div class="stat-number">50+</div>
-        <div class="stat-label">International Caps</div>
+      <div class="stat-cell">
+        <div class="stat-number">60+</div>
+        <div class="stat-label">Caps Played</div>
       </div>
-      <div class="stat-item">
+      <div class="stat-cell">
         <div class="stat-number">#99</div>
-        <div class="stat-label">FIFA Ranking</div>
+        <div class="stat-label">FIFA World Ranking</div>
       </div>
-      <div class="stat-item">
+      <div class="stat-cell">
         <div class="stat-number">24</div>
-        <div class="stat-label">Squad Players</div>
+        <div class="stat-label">Active Squad</div>
       </div>
     </div>
   </div>
 
-  <!-- Latest Match -->
-  <div class="section">
+  <!-- =============================================================
+       LATEST RESULT
+       ============================================================= -->
+  <div class="section-sm">
     <div class="container">
-      <div class="match-highlight">
+      <div class="match-card">
         <div class="match-team">
           <div class="flag">🇽🇰</div>
           <div class="name">Kosovo</div>
         </div>
-        <div class="match-score">
-          <div class="score-num">2 – 1</div>
-          <div class="score-label">UEFA Nations League</div>
+        <div class="match-center">
+          <div class="score">2 – 1</div>
+          <div class="comp">UEFA Nations League</div>
         </div>
         <div class="match-team">
           <div class="flag">🇨🇾</div>
@@ -309,89 +106,112 @@
     </div>
   </div>
 
-  <!-- News Section -->
+  <!-- =============================================================
+       NEWS
+       ============================================================= -->
   <section class="section" style="padding-top: 20px;">
     <div class="container">
-      <h2 class="section-title">Latest News</h2>
-      <p class="section-subtitle">Stay up to date with everything Dardanët</p>
-      <div class="news-grid">
-        <div class="card news-card">
-          <div class="card-img" style="background:linear-gradient(135deg, #003DA5, #1A5CC8);">
-            <span class="news-tag">Nations League</span>
-            <span style="font-size:3rem;">🏆</span>
+      <div class="section-header">
+        <div class="section-tag">Latest News</div>
+        <h2 class="section-title">From the Dardanët Camp</h2>
+        <p class="section-subtitle">Breaking news, match reports, and squad announcements</p>
+      </div>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-media" style="background:linear-gradient(135deg, #132D54 0%, #1A3A6B 50%, #0E1E36 100%);">
+            <span class="card-badge">Nations League</span>
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="opacity:0.5">
+              <path d="M40 10 L50 30 L40 26 L30 30 Z" fill="#F0B828"/>
+              <circle cx="40" cy="48" r="16" stroke="#F0B828" stroke-width="3" fill="none"/>
+              <circle cx="40" cy="48" r="6" fill="#F0B828"/>
+              <line x1="24" y1="65" x2="56" y2="65" stroke="#F0B828" stroke-width="3" stroke-linecap="round"/>
+            </svg>
           </div>
           <div class="card-body">
-            <div class="date">July 12, 2026</div>
-            <h3>Kosovo Clinches Promotion to League B</h3>
-            <p>A historic victory sees the Dardanët promoted to UEFA Nations League B for the first time in the nation's history.</p>
+            <div class="date">12 July 2026</div>
+            <h3>Kosovo Clinches Promotion to Nations League B</h3>
+            <p>Historic victory over Cyprus seals a perfect campaign — the Dardanët are moving up for the first time.</p>
           </div>
         </div>
 
-        <div class="card news-card">
-          <div class="card-img" style="background:linear-gradient(135deg, #1A5CC8, #4A7FE0);">
-            <span class="news-tag">Squad</span>
-            <span style="font-size:3rem;">👤</span>
+        <div class="card">
+          <div class="card-media" style="background:linear-gradient(135deg, #1A3A6B 0%, #214782 50%, #132D54 100%);">
+            <span class="card-badge">Squad</span>
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="opacity:0.5">
+              <circle cx="40" cy="28" r="14" stroke="#F0B828" stroke-width="3" fill="none"/>
+              <path d="M16 72 Q40 52 64 72" stroke="#F0B828" stroke-width="3" fill="none" stroke-linecap="round"/>
+            </svg>
           </div>
           <div class="card-body">
-            <div class="date">July 8, 2026</div>
-            <h3>New Call-Ups Announced for September Camp</h3>
-            <p>Head coach announces a 26-man squad featuring three debutants for the upcoming international break.</p>
+            <div class="date">8 July 2026</div>
+            <h3>Foda Names 26-Man Squad for September Camp</h3>
+            <p>Three debutants earn their first call-ups as Kosovo prepares for the crucial World Cup qualifiers.</p>
           </div>
         </div>
 
-        <div class="card news-card">
-          <div class="card-img" style="background:linear-gradient(135deg, #002E7A, #003DA5);">
-            <span class="news-tag">Stadium</span>
-            <span style="font-size:3rem;">🏟️</span>
+        <div class="card">
+          <div class="card-media" style="background:linear-gradient(135deg, #0E1E36 0%, #132D54 50%, #0A1628 100%);">
+            <span class="card-badge">Stadium</span>
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="opacity:0.5">
+              <ellipse cx="40" cy="52" rx="36" ry="14" stroke="#F0B828" stroke-width="2.5" fill="none"/>
+              <path d="M4 52 L4 32 Q40 16 76 32 L76 52" stroke="#F0B828" stroke-width="2.5" fill="none"/>
+              <line x1="24" y1="20" x2="56" y2="20" stroke="#F0B828" stroke-width="2" stroke-linecap="round"/>
+            </svg>
           </div>
           <div class="card-body">
-            <div class="date">June 30, 2026</div>
-            <h3>Fadil Vokrri Stadium Renovation Complete</h3>
-            <p>The national stadium in Prishtina unveils its newly renovated East Stand, increasing capacity to 16,200 seats.</p>
+            <div class="date">30 June 2026</div>
+            <h3>Fadil Vokrri Stadium Renovation Unveiled</h3>
+            <p>The national stadium in Prishtina reveals newly renovated East Stand, expanding capacity to 16,200.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- =============================================================
+       CTA
+       ============================================================= -->
   <section class="cta-section">
     <div class="container">
-      <h2>Bëhu Një, Bëhu Dardan!</h2>
-      <p>Be one. Be a Dardan. Join thousands of fans supporting Kosovo on the road to glory.</p>
-      <a href="contact.html" class="btn btn-dark">Get in Touch</a>
+      <h2>Bëhu Një, Bëhu Dardan</h2>
+      <p>Be one. Be a Dardan. Join the thousands who stand behind Kosovo on the road to the World Cup.</p>
+      <a href="contact.html" class="btn btn-gold">Get in Touch</a>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- =============================================================
+       FOOTER
+       ============================================================= -->
   <footer class="footer">
-    <div class="footer-inner">
+    <div class="footer-grid">
       <div>
-        <h3>Kosovo NT</h3>
-        <p>The official website of the Kosovo National Football Team — representing the Republic of Kosovo in international football since 2016.</p>
+        <h4>FFK Kosovo</h4>
+        <p>The official home of the Kosovo National Football Team — representing the Republic of Kosovo on the world stage since 2016.</p>
       </div>
       <div>
-        <h3>Quick Links</h3>
-        <a href="about.html">About</a><br>
-        <a href="team.html">Team</a><br>
-        <a href="fixtures.html">Fixtures</a><br>
+        <h4>Navigate</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="team.html">Squad</a>
+        <a href="fixtures.html">Fixtures</a>
         <a href="contact.html">Contact</a>
       </div>
       <div>
-        <h3>Follow Us</h3>
-        <p>Facebook</p>
-        <p>Instagram</p>
-        <p>Twitter / X</p>
+        <h4>Follow</h4>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">X / Twitter</a>
+        <a href="#">YouTube</a>
       </div>
       <div>
-        <h3>Contact</h3>
-        <p>FFK Headquarters</p>
-        <p>Prishtina, Kosovo</p>
-        <p>info@ffk-kosova.com</p>
+        <h4>Contact</h4>
+        <p>FFK Headquarters<br>Prishtina, Kosovo<br>info@ffk-kosova.com</p>
       </div>
     </div>
     <div class="footer-bottom">
-      &copy; 2026 Kosovo National Football Team. All rights reserved.
+      <span>&copy; 2026 Federata e Futbollit e Kosovës. All rights reserved.</span>
+      <span style="color:var(--gold);">Dardanët ⚽</span>
     </div>
   </footer>
 

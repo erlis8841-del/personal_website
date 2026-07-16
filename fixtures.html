@@ -4,202 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fixtures — Kosovo National Football Team</title>
-  <meta name="description" content="Upcoming fixtures and recent results for the Kosovo National Football Team.">
+  <meta name="description" content="Upcoming fixtures and recent results for the Kosovo National Football Team — World Cup qualifiers, Nations League, and more.">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .fixture-tabs {
-      display: flex;
-      justify-content: center;
-      gap: 4px;
-      margin-bottom: 40px;
-      background: var(--white);
-      border-radius: 28px;
-      padding: 4px;
-      box-shadow: var(--shadow);
-      max-width: 320px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .fix-tab {
-      flex: 1;
-      padding: 10px 24px;
-      border: none;
-      border-radius: 24px;
-      background: transparent;
-      font-weight: 700;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-      color: var(--gray);
-    }
-
-    .fix-tab.active {
-      background: var(--blue);
-      color: var(--white);
-    }
-
-    .fixture-list {
-      max-width: 800px;
-      margin: 0 auto;
-      display: none;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .fixture-list.active {
-      display: flex;
-    }
-
-    .fixture-row {
-      background: var(--white);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 20px 24px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      transition: transform 0.2s;
-    }
-
-    .fixture-row:hover {
-      transform: translateX(4px);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-    }
-
-    .fixture-date {
-      text-align: center;
-      min-width: 64px;
-      border-right: 2px solid var(--off-white);
-      padding-right: 16px;
-    }
-
-    .fixture-date .day {
-      font-size: 1.5rem;
-      font-weight: 900;
-      color: var(--blue);
-    }
-
-    .fixture-date .month {
-      font-size: 0.78rem;
-      color: var(--gray);
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
-    .fixture-teams {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .fixture-teams .team {
-      font-weight: 700;
-      font-size: 1rem;
-      flex: 1;
-    }
-
-    .fixture-teams .team.home {
-      text-align: right;
-    }
-
-    .fixture-teams .vs {
-      color: var(--gray);
-      font-weight: 600;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-    }
-
-    .fixture-teams .flag-icon {
-      font-size: 1.4rem;
-    }
-
-    .fixture-score {
-      font-weight: 900;
-      font-size: 1.3rem;
-      color: var(--blue);
-      text-align: center;
-      min-width: 50px;
-    }
-
-    .fixture-comp {
-      min-width: 100px;
-      text-align: right;
-    }
-
-    .comp-badge {
-      display: inline-block;
-      background: var(--blue);
-      color: var(--white);
-      padding: 4px 12px;
-      border-radius: 12px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-
-    .comp-badge.win {
-      background: #16A34A;
-    }
-
-    .comp-badge.draw {
-      background: var(--yellow);
-      color: var(--blue-dark);
-    }
-
-    .comp-badge.loss {
-      background: #DC2626;
-    }
-
-    .result-badge {
-      display: inline-block;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      font-size: 0.65rem;
-      font-weight: 900;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .result-badge.W { background: #16A34A; color: white; }
-    .result-badge.D { background: var(--yellow); color: var(--blue-dark); }
-    .result-badge.L { background: #DC2626; color: white; }
-
-    @media (max-width: 640px) {
-      .fixture-row {
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-      .fixture-date {
-        border-right: none;
-        padding-right: 0;
-        min-width: auto;
-      }
-      .fixture-comp {
-        width: 100%;
-        text-align: left;
-      }
-    }
+    .fixture-list { display: none; flex-direction: column; gap: 10px; }
+    .fixture-list.active { display: flex; }
   </style>
 </head>
 <body>
 
-  <div class="page-loader"><div class="spinner"></div></div>
-
   <nav class="navbar">
     <div class="nav-inner">
       <a href="index.html" class="logo">
-        <div class="logo-icon">⚽</div>
-        <span>Kosovo<span style="color:var(--yellow);">NT</span></span>
+        <div class="logo-icon">
+          <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="22" cy="22" r="20" fill="#0A1628" stroke="#F0B828" stroke-width="2"/>
+            <path d="M22 6 L28 18 L22 16 L16 18 Z" fill="#F0B828" opacity="0.9"/>
+            <circle cx="22" cy="26" r="8" fill="none" stroke="#F0B828" stroke-width="2.5"/>
+            <circle cx="22" cy="26" r="3" fill="#F0B828"/>
+            <line x1="14" y1="32" x2="30" y2="32" stroke="#F0B828" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span>KOSOVO<span style="color:var(--gold);">NT</span></span>
       </a>
-      <button class="hamburger" aria-label="Menu">☰</button>
+      <button class="hamburger" aria-label="Toggle menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+        </svg>
+      </button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="team.html">Team</a></li>
+        <li><a href="team.html">Squad</a></li>
         <li><a href="fixtures.html" class="active">Fixtures</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -207,221 +43,140 @@
   </nav>
 
   <section class="page-hero">
-    <h1>Fixtures & Results</h1>
-    <p>Track every match — upcoming fixtures and past results for the Dardanët.</p>
+    <h1>Fixtures &amp; Results</h1>
+    <p>Every match, every goal, every moment — the Dardanët on the road to the World Cup.</p>
   </section>
 
   <section class="section">
     <div class="container">
-      <div class="fixture-tabs">
-        <button class="fix-tab active" data-tab="upcoming">Upcoming</button>
-        <button class="fix-tab" data-tab="results">Results</button>
+      <div class="tab-bar" id="fixtureTabs">
+        <button class="tab-btn active" data-tab="upcoming">Upcoming</button>
+        <button class="tab-btn" data-tab="results">Results</button>
       </div>
 
-      <!-- Upcoming Fixtures -->
+      <!-- Upcoming -->
       <div class="fixture-list active" id="upcoming">
         <div class="fixture-row">
-          <div class="fixture-date">
-            <div class="day">05</div>
-            <div class="month">Sep</div>
-          </div>
+          <div class="fixture-date"><div class="day">05</div><div class="month">Sep</div></div>
           <div class="fixture-teams">
-            <span class="team home">🇽🇰 Kosovo</span>
-            <span class="vs">vs</span>
-            <span class="team">🇷🇴 Romania</span>
+            <span class="fixture-team home">🇽🇰 Kosovo</span>
+            <span class="fixture-vs">vs</span>
+            <span class="fixture-team">🇷🇴 Romania</span>
           </div>
-          <div class="fixture-comp">
-            <span class="comp-badge">WC Qualifier</span>
-          </div>
+          <span class="fixture-badge badge-upcoming">WC Qualifier</span>
         </div>
-
         <div class="fixture-row">
-          <div class="fixture-date">
-            <div class="day">08</div>
-            <div class="month">Sep</div>
-          </div>
+          <div class="fixture-date"><div class="day">08</div><div class="month">Sep</div></div>
           <div class="fixture-teams">
-            <span class="team home">🇧🇦 Bosnia & Herz.</span>
-            <span class="vs">vs</span>
-            <span class="team">🇽🇰 Kosovo</span>
+            <span class="fixture-team home">🇧🇦 Bosnia &amp; Herz.</span>
+            <span class="fixture-vs">vs</span>
+            <span class="fixture-team">🇽🇰 Kosovo</span>
           </div>
-          <div class="fixture-comp">
-            <span class="comp-badge">WC Qualifier</span>
-          </div>
+          <span class="fixture-badge badge-upcoming">WC Qualifier</span>
         </div>
-
         <div class="fixture-row">
-          <div class="fixture-date">
-            <div class="day">10</div>
-            <div class="month">Oct</div>
-          </div>
+          <div class="fixture-date"><div class="day">10</div><div class="month">Oct</div></div>
           <div class="fixture-teams">
-            <span class="team home">🇽🇰 Kosovo</span>
-            <span class="vs">vs</span>
-            <span class="team">🇸🇲 San Marino</span>
+            <span class="fixture-team home">🇽🇰 Kosovo</span>
+            <span class="fixture-vs">vs</span>
+            <span class="fixture-team">🇸🇲 San Marino</span>
           </div>
-          <div class="fixture-comp">
-            <span class="comp-badge">WC Qualifier</span>
-          </div>
+          <span class="fixture-badge badge-upcoming">WC Qualifier</span>
         </div>
-
         <div class="fixture-row">
-          <div class="fixture-date">
-            <div class="day">13</div>
-            <div class="month">Oct</div>
-          </div>
+          <div class="fixture-date"><div class="day">13</div><div class="month">Oct</div></div>
           <div class="fixture-teams">
-            <span class="team home">🇦🇹 Austria</span>
-            <span class="vs">vs</span>
-            <span class="team">🇽🇰 Kosovo</span>
+            <span class="fixture-team home">🇦🇹 Austria</span>
+            <span class="fixture-vs">vs</span>
+            <span class="fixture-team">🇽🇰 Kosovo</span>
           </div>
-          <div class="fixture-comp">
-            <span class="comp-badge">WC Qualifier</span>
-          </div>
+          <span class="fixture-badge badge-upcoming">WC Qualifier</span>
         </div>
-
         <div class="fixture-row">
-          <div class="fixture-date">
-            <div class="day">14</div>
-            <div class="month">Nov</div>
-          </div>
+          <div class="fixture-date"><div class="day">14</div><div class="month">Nov</div></div>
           <div class="fixture-teams">
-            <span class="team home">🇽🇰 Kosovo</span>
-            <span class="vs">vs</span>
-            <span class="team">🇧🇦 Bosnia & Herz.</span>
+            <span class="fixture-team home">🇽🇰 Kosovo</span>
+            <span class="fixture-vs">vs</span>
+            <span class="fixture-team">🇧🇦 Bosnia &amp; Herz.</span>
           </div>
-          <div class="fixture-comp">
-            <span class="comp-badge">WC Qualifier</span>
-          </div>
+          <span class="fixture-badge badge-upcoming">WC Qualifier</span>
         </div>
       </div>
 
       <!-- Results -->
       <div class="fixture-list" id="results">
         <div class="fixture-row">
-          <div class="fixture-date">
-            <div class="day">10</div>
-            <div class="month">Jun</div>
-          </div>
+          <div class="fixture-date"><div class="day">10</div><div class="month">Jun</div></div>
           <div class="fixture-teams">
-            <span class="team home">🇽🇰 Kosovo</span>
-            <span class="vs">vs</span>
-            <span class="team">🇨🇾 Cyprus</span>
+            <span class="fixture-team home">🇽🇰 Kosovo</span>
+            <span class="fixture-vs">vs</span>
+            <span class="fixture-team">🇨🇾 Cyprus</span>
           </div>
           <div class="fixture-score">2 – 1</div>
-          <div class="fixture-comp">
-            <span class="comp-badge win">🟢 Win</span>
-          </div>
+          <span class="fixture-badge badge-win">Win</span>
         </div>
-
         <div class="fixture-row">
-          <div class="fixture-date">
-            <div class="day">06</div>
-            <div class="month">Jun</div>
-          </div>
+          <div class="fixture-date"><div class="day">06</div><div class="month">Jun</div></div>
           <div class="fixture-teams">
-            <span class="team home">🇷🇴 Romania</span>
-            <span class="vs">vs</span>
-            <span class="team">🇽🇰 Kosovo</span>
+            <span class="fixture-team home">🇷🇴 Romania</span>
+            <span class="fixture-vs">vs</span>
+            <span class="fixture-team">🇽🇰 Kosovo</span>
           </div>
           <div class="fixture-score">1 – 1</div>
-          <div class="fixture-comp">
-            <span class="comp-badge draw">🟡 Draw</span>
-          </div>
+          <span class="fixture-badge badge-draw">Draw</span>
         </div>
-
         <div class="fixture-row">
-          <div class="fixture-date">
-            <div class="day">24</div>
-            <div class="month">Mar</div>
-          </div>
+          <div class="fixture-date"><div class="day">24</div><div class="month">Mar</div></div>
           <div class="fixture-teams">
-            <span class="team home">🇽🇰 Kosovo</span>
-            <span class="vs">vs</span>
-            <span class="team">🇮🇸 Iceland</span>
+            <span class="fixture-team home">🇽🇰 Kosovo</span>
+            <span class="fixture-vs">vs</span>
+            <span class="fixture-team">🇮🇸 Iceland</span>
           </div>
           <div class="fixture-score">3 – 1</div>
-          <div class="fixture-comp">
-            <span class="comp-badge win">🟢 Win</span>
-          </div>
+          <span class="fixture-badge badge-win">Win</span>
         </div>
-
         <div class="fixture-row">
-          <div class="fixture-date">
-            <div class="day">21</div>
-            <div class="month">Mar</div>
-          </div>
+          <div class="fixture-date"><div class="day">21</div><div class="month">Mar</div></div>
           <div class="fixture-teams">
-            <span class="team home">🇽🇰 Kosovo</span>
-            <span class="vs">vs</span>
-            <span class="team">🇦🇩 Andorra</span>
+            <span class="fixture-team home">🇽🇰 Kosovo</span>
+            <span class="fixture-vs">vs</span>
+            <span class="fixture-team">🇦🇩 Andorra</span>
           </div>
           <div class="fixture-score">4 – 0</div>
-          <div class="fixture-comp">
-            <span class="comp-badge win">🟢 Win</span>
-          </div>
+          <span class="fixture-badge badge-win">Win</span>
         </div>
-
         <div class="fixture-row">
-          <div class="fixture-date">
-            <div class="day">18</div>
-            <div class="month">Nov</div>
-          </div>
+          <div class="fixture-date"><div class="day">18</div><div class="month">Nov</div></div>
           <div class="fixture-teams">
-            <span class="team home">🇱🇹 Lithuania</span>
-            <span class="vs">vs</span>
-            <span class="team">🇽🇰 Kosovo</span>
+            <span class="fixture-team home">🇱🇹 Lithuania</span>
+            <span class="fixture-vs">vs</span>
+            <span class="fixture-team">🇽🇰 Kosovo</span>
           </div>
           <div class="fixture-score">0 – 1</div>
-          <div class="fixture-comp">
-            <span class="comp-badge win">🟢 Win</span>
-          </div>
+          <span class="fixture-badge badge-win">Win</span>
         </div>
       </div>
     </div>
   </section>
 
   <footer class="footer">
-    <div class="footer-inner">
-      <div>
-        <h3>Kosovo NT</h3>
-        <p>The official website of the Kosovo National Football Team — representing the Republic of Kosovo in international football since 2016.</p>
-      </div>
-      <div>
-        <h3>Quick Links</h3>
-        <a href="about.html">About</a><br>
-        <a href="team.html">Team</a><br>
-        <a href="fixtures.html">Fixtures</a><br>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div>
-        <h3>Follow Us</h3>
-        <p>Facebook</p>
-        <p>Instagram</p>
-        <p>Twitter / X</p>
-      </div>
-      <div>
-        <h3>Contact</h3>
-        <p>FFK Headquarters</p>
-        <p>Prishtina, Kosovo</p>
-        <p>info@ffk-kosova.com</p>
-      </div>
+    <div class="footer-grid">
+      <div><h4>FFK Kosovo</h4><p>The official home of the Kosovo National Football Team since 2016.</p></div>
+      <div><h4>Navigate</h4><a href="index.html">Home</a><a href="about.html">About</a><a href="team.html">Squad</a><a href="fixtures.html">Fixtures</a><a href="contact.html">Contact</a></div>
+      <div><h4>Follow</h4><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">X / Twitter</a><a href="#">YouTube</a></div>
+      <div><h4>Contact</h4><p>FFK Headquarters<br>Prishtina, Kosovo<br>info@ffk-kosova.com</p></div>
     </div>
-    <div class="footer-bottom">
-      &copy; 2026 Kosovo National Football Team. All rights reserved.
-    </div>
+    <div class="footer-bottom"><span>&copy; 2026 FFK. All rights reserved.</span><span style="color:var(--gold);">Dardanët ⚽</span></div>
   </footer>
 
   <script src="js/script.js"></script>
   <script>
-    // Fixture tab toggle
-    document.querySelectorAll('.fix-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        document.querySelectorAll('.fix-tab').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-
-        document.querySelectorAll('.fixture-list').forEach(list => list.classList.remove('active'));
-        document.getElementById(tab.dataset.tab).classList.add('active');
+    document.querySelectorAll('#fixtureTabs .tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#fixtureTabs .tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.fixture-list').forEach(l => l.classList.remove('active'));
+        document.getElementById(btn.dataset.tab).classList.add('active');
       });
     });
   </script>
