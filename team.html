@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team — Kosovo National Football Team</title>
+  <meta name="description" content="The current squad of the Kosovo National Football Team — goalkeepers, defenders, midfielders, and forwards.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .position-section {
+      margin-bottom: 48px;
+    }
+
+    .position-title {
+      color: var(--blue);
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .position-title::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background: var(--off-white);
+      border-radius: 1px;
+    }
+
+    .players-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .player-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 20px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .player-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    .player-num {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: var(--yellow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .player-info h4 {
+      color: var(--dark);
+      font-size: 0.95rem;
+      margin-bottom: 2px;
+    }
+
+    .player-info .pos {
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+    }
+
+    .player-info .club {
+      color: var(--gray);
+      font-size: 0.8rem;
+    }
+
+    .captain .player-num {
+      background: var(--yellow);
+      color: var(--blue-dark);
+      position: relative;
+    }
+
+    .captain .player-num::after {
+      content: 'C';
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      width: 18px;
+      height: 18px;
+      background: var(--blue);
+      color: var(--white);
+      border-radius: 50%;
+      font-size: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      padding: 8px 20px;
+      border: 2px solid var(--blue);
+      background: transparent;
+      color: var(--blue);
+      border-radius: 20px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .tab-btn:hover,
+    .tab-btn.active {
+      background: var(--blue);
+      color: var(--white);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-loader"><div class="spinner"></div></div>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">⚽</div>
+        <span>Kosovo<span style="color:var(--yellow);">NT</span></span>
+      </a>
+      <button class="hamburger" aria-label="Menu">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="team.html" class="active">Team</a></li>
+        <li><a href="fixtures.html">Fixtures</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <h1>The Squad</h1>
+    <p>Meet the Dardanët — the players representing Kosovo on the international stage.</p>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="tabs">
+        <button class="tab-btn active" data-filter="all">All Players</button>
+        <button class="tab-btn" data-filter="Goalkeeper">Goalkeepers</button>
+        <button class="tab-btn" data-filter="Defender">Defenders</button>
+        <button class="tab-btn" data-filter="Midfielder">Midfielders</button>
+        <button class="tab-btn" data-filter="Forward">Forwards</button>
+      </div>
+
+      <!-- Goalkeepers -->
+      <div class="position-section">
+        <h2 class="position-title">🧤 Goalkeepers</h2>
+        <div class="players-grid">
+          <div class="player-card">
+            <div class="player-num">1</div>
+            <div class="player-info">
+              <h4>Arijanet Muric</h4>
+              <div class="pos">Goalkeeper</div>
+              <div class="club">Ipswich Town 🏴󠁧󠁢󠁥󠁮󠁧󠁿</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">12</div>
+            <div class="player-info">
+              <h4>Visar Bekaj</h4>
+              <div class="pos">Goalkeeper</div>
+              <div class="club">Hatayspor 🇹🇷</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">16</div>
+            <div class="player-info">
+              <h4>Ilir Avdyli</h4>
+              <div class="pos">Goalkeeper</div>
+              <div class="club">FC Prishtina 🇽🇰</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Defenders -->
+      <div class="position-section">
+        <h2 class="position-title">🛡️ Defenders</h2>
+        <div class="players-grid">
+          <div class="player-card captain">
+            <div class="player-num">4</div>
+            <div class="player-info">
+              <h4>Amir Rrahmani (C)</h4>
+              <div class="pos">Defender</div>
+              <div class="club">Napoli 🇮🇹</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">3</div>
+            <div class="player-info">
+              <h4>Fidan Aliti</h4>
+              <div class="pos">Defender</div>
+              <div class="club">Alanyaspor 🇹🇷</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">15</div>
+            <div class="player-info">
+              <h4>Mërgim Vojvoda</h4>
+              <div class="pos">Defender</div>
+              <div class="club">Torino 🇮🇹</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">2</div>
+            <div class="player-info">
+              <h4>Florent Hadërgjonaj</h4>
+              <div class="pos">Defender</div>
+              <div class="club">Alanyaspor 🇹🇷</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">5</div>
+            <div class="player-info">
+              <h4>Lumbardh Dellova</h4>
+              <div class="pos">Defender</div>
+              <div class="club">CSKA Sofia 🇧🇬</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">13</div>
+            <div class="player-info">
+              <h4>Leart Paqarada</h4>
+              <div class="pos">Defender</div>
+              <div class="club">FC Köln 🇩🇪</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Midfielders -->
+      <div class="position-section">
+        <h2 class="position-title">🎯 Midfielders</h2>
+        <div class="players-grid">
+          <div class="player-card">
+            <div class="player-num">8</div>
+            <div class="player-info">
+              <h4>Florent Muslija</h4>
+              <div class="pos">Midfielder</div>
+              <div class="club">SC Freiburg 🇩🇪</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">14</div>
+            <div class="player-info">
+              <h4>Valon Berisha</h4>
+              <div class="pos">Midfielder</div>
+              <div class="club">LASK 🇦🇹</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">10</div>
+            <div class="player-info">
+              <h4>Edon Zhegrova</h4>
+              <div class="pos">Midfielder</div>
+              <div class="club">Lille 🇫🇷</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">7</div>
+            <div class="player-info">
+              <h4>Milot Rashica</h4>
+              <div class="pos">Midfielder</div>
+              <div class="club">Beşiktaş 🇹🇷</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">19</div>
+            <div class="player-info">
+              <h4>Bernard Berisha</h4>
+              <div class="pos">Midfielder</div>
+              <div class="club">Akhmat Grozny 🇷🇺</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">6</div>
+            <div class="player-info">
+              <h4>Blendi Idrizi</h4>
+              <div class="pos">Midfielder</div>
+              <div class="club">Schalke 04 🇩🇪</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">21</div>
+            <div class="player-info">
+              <h4>Lindon Emërllahu</h4>
+              <div class="pos">Midfielder</div>
+              <div class="club">FC Ballkani 🇽🇰</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Forwards -->
+      <div class="position-section">
+        <h2 class="position-title">⚡ Forwards</h2>
+        <div class="players-grid">
+          <div class="player-card">
+            <div class="player-num">9</div>
+            <div class="player-info">
+              <h4>Vedat Muriqi</h4>
+              <div class="pos">Forward</div>
+              <div class="club">Mallorca 🇪🇸</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">11</div>
+            <div class="player-info">
+              <h4>Albion Rrahmani</h4>
+              <div class="pos">Forward</div>
+              <div class="club">Sparta Prague 🇨🇿</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">17</div>
+            <div class="player-info">
+              <h4>Ermal Krasniqi</h4>
+              <div class="pos">Forward</div>
+              <div class="club">Sparta Prague 🇨🇿</div>
+            </div>
+          </div>
+          <div class="player-card">
+            <div class="player-num">20</div>
+            <div class="player-info">
+              <h4>Elbasan Rashani</h4>
+              <div class="pos">Forward</div>
+              <div class="club">Clermont 🇫🇷</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <h3>Kosovo NT</h3>
+        <p>The official website of the Kosovo National Football Team — representing the Republic of Kosovo in international football since 2016.</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <a href="about.html">About</a><br>
+        <a href="team.html">Team</a><br>
+        <a href="fixtures.html">Fixtures</a><br>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h3>Follow Us</h3>
+        <p>Facebook</p>
+        <p>Instagram</p>
+        <p>Twitter / X</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>FFK Headquarters</p>
+        <p>Prishtina, Kosovo</p>
+        <p>info@ffk-kosova.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Kosovo National Football Team. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    // Tab filter
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.player-card').forEach(card => {
+          const pos = card.querySelector('.pos').textContent;
+          if (filter === 'all' || pos === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
